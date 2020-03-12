@@ -23,7 +23,7 @@ async function color () {
 }
 bot.on('ready', () => {
     color();
-    bot.user.setPresence({ game: { name: `стоны`, type: 4 } }).catch();
+    bot.user.setPresence({ game: { name: `стоны мувика`, type: 2 } }).catch();
 });
 
 
