@@ -199,7 +199,7 @@ if (message.content.startsWith(`${prefix}kiss`)) {
         message.channel.send(`Загрузка...`).then(msg => {
         const urls = ['https://cdn.discordapp.com/attachments/687741386510172184/687743383644668045/kiss_18.gif','https://cdn.discordapp.com/attachments/687741386510172184/687743591988330569/kiss_39.gif','https://cdn.discordapp.com/attachments/687741386510172184/687744159280660674/kiss_23.gif','https://cdn.discordapp.com/attachments/687741386510172184/687744532636368956/kiss_9.gif','https://cdn.discordapp.com/attachments/687741386510172184/687744632800673828/kiss_40.gif','https://cdn.discordapp.com/attachments/687741386510172184/687744798475550783/kiss_59.gif','https://cdn.discordapp.com/attachments/687741386510172184/687744917438464005/kiss_4.gif','https://cdn.discordapp.com/attachments/687741386510172184/687744989845127189/kiss_26.gif','https://cdn.discordapp.com/attachments/687741386510172184/687745115749351510/kiss_58.gif','https://cdn.discordapp.com/attachments/687741386510172184/687745327641526279/kiss_28.gif'];
                 let embed = new Discord.RichEmbed()
-                    .setDescription(`${user} Пизданул(а) ${user1}.`)
+                    .setDescription(`${user} Поцеловал(а) ${user1}.`)
                     .setImage(urls[Math.floor(Math.random() * urls.length)])
                     .setFooter('►Завод №98 | z!kiss @user', 'https://cdn.discordapp.com/emojis/640790614539239435.png?v=1')
                     .setColor("#007fff")
