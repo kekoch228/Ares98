@@ -49,7 +49,7 @@ if(command === "smile" && ['248521740945195008'].includes(message.author.id)){
    let member = message.mentions.members.first();
    if(!member) member = message.member;
 
-   let replies = [`${member} не хей(натурал) `, `${member} на 1% хей ${emoji.hey}`.]
+   let replies = [`${member} не хей(натурал) `, `${member} на 1% хей ${emoji.hey}`.];
    let result = Math.floor((Math.random() * replies.length));
    let question = args.join(" "); 
 
