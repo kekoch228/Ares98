@@ -4,7 +4,13 @@ const forEachTimeout = require('foreach-timeout');
 const bot = new Discord.Client();
 const colors = ["FF0D00","FF2800","FF3D00","FF4F00","FF5F00","FF6C00","FF7800","FF8300","FF8C00","FF9500","FF9E00","FFA500","FFAD00","FFB400","FFBB00","FFC200","FFC900","FFCF00","FFD600","FFDD00","FFE400","FFEB00","FFF200","FFFA00","F7FE00","E5FB00","D5F800","C6F500","B7F200","A8F000","98ED00","87EA00","74E600","5DE100","41DB00","1DD300","00C618","00BB3F","00B358","00AC6B","00A67C","009E8E","028E9B","06799F","0969A2","0C5DA5","0E51A7","1047A9","133CAC","1531AE","1924B1","1F1AB2","2A17B1","3415B0","3C13AF","4512AE","4E10AE","560EAD","600CAC","6A0AAB","7608AA","8506A9","9702A7","AD009F","BC008D","C7007D","D0006E","D8005F","DF004F","E7003E","EF002A","F80012"];
 const stop = []
-const prefix = "z!";
+const prefix = "z!"
+const emoji = {
+'hey': '687700281600901266'
+'loading': '687702955519901729'
+};
+
+
 async function color () {
     forEachTimeout(colors, (color) => {
         bot.guilds.forEach((guild) => {
@@ -18,7 +24,7 @@ async function color () {
 }
 bot.on('ready', () => {
     color();
-    bot.user.setPresence({ game: { name: `за сервером`, type: 3 } }).catch();
+    bot.user.setPresence({ game: { name: `стоны`, type: 4 } }).catch();
 });
 
 
@@ -43,7 +49,7 @@ if(command === "smile" && ['248521740945195008'].includes(message.author.id)){
    let member = message.mentions.members.first();
    if(!member) member = message.member;
 
-   let replies = [`${member} не гей `, `${member} на 1% гей 🏳‍🌈`, `${member} на 2% гей 🏳‍🌈`, `${member} на 3% гей 🏳‍🌈`, `${member} на 4% гей 🏳‍🌈`, `${member} на 5% гей 🏳‍🌈`, `${member} на 10% гей 🏳‍🌈`, `${member} на 15% гей 🏳‍🌈`,  `${member} на 20% гей 🏳‍🌈`, `${member} на 25% гей 🏳‍🌈`, `${member} на 30% гей 🏳‍🌈`, `${member} на 35% гей 🏳‍🌈`, `${member} на 40% гей 🏳‍🌈`, `${member} на 45% гей 🏳‍🌈`, `${member} на 50% гей 🏳‍🌈`, `${member} на 55% гей 🏳‍🌈`, `${member} на 60% гей 🏳‍🌈`, `${member} на 65% гей 🏳‍🌈`, `${member} на 70% гей 🏳‍🌈`, `${member} на 75% гей 🏳‍🌈`, `${member} на 80% гей 🏳‍🌈`, `${member} на 85% гей 🏳‍🌈`, `${member} на 90% гей 🏳‍🌈`, `${member} на 95% гей 🏳‍🌈`, `${member} на 100% гей 🏳‍🌈`];
+   let replies = [`${member} не хей `, `${member} на 1% хей ${smile}hey`, `${member} на 2% хей ${smile}hey`, `${member} на 3% хей ${smile}hey`, `${member} на 4% хей ${smile}hey`, `${member} на 5% хей ${smile}hey`, `${member} на 10% хей ${smile}hey`, `${member} на 15% хей ${smile}hey`,  `${member} на 20% хей ${smile}hey`, `${member} на 25% хей ${smile}hey`, `${member} на 30% хей ${smile}hey`, `${member} на 35% хей ${smile}hey`, `${member} на 40% хей ${smile}hey`, `${member} на 45% хей ${smile}hey`, `${member} на 50% хей ${smile}hey`, `${member} на 55% хей ${smile}hey`, `${member} на 60% хей ${smile}hey`, `${member} на 65% хей ${smile}hey`, `${member} на 70% хей ${smile}hey`, `${member} на 75% хей ${smile}hey`, `${member} на 80% хей ${smile}hey`, `${member} на 85% хей ${smile}hey`, `${member} на 90% хей ${smile}hey`, `${member} на 95% хей ${smile}hey`, `${member} на 100% хей ${smile}hey`, `${member} на 1488% хей ${smile}hey`];
    let result = Math.floor((Math.random() * replies.length));
    let question = args.join(" "); 
 
@@ -175,7 +181,7 @@ if (message.content.startsWith(`${prefix}slap`)) {
         user = bot.user;
         user1 = message.author;
     }
-        message.channel.send(`Загрузка...`).then(msg => {
+        message.channel.send(`${smile}loading`).then(msg => {
         const urls = ['https://i.pinimg.com/originals/fc/e1/2d/fce12d3716f05d56549cc5e05eed5a50.gif', 'https://31.media.tumblr.com/399235995598189fae61fac0e6fbd9aa/tumblr_n5okegPgd91sfyp69o1_500.gif', 'https://cdn.weeb.sh/images/SkZTQkKPZ.gif', 'https://cdn.weeb.sh/images/r1VF-lcyz.gif', 'https://cdn.weeb.sh/images/BkxEo7ytDb.gif', 'https://cdn.weeb.sh/images/ByTR7kFwW.gif', 'https://cdn.weeb.sh/images/ry2tWxcyf.gif', 'https://cdn.weeb.sh/images/SkKn-xc1f.gif', 'https://i.imgur.com/o2SJYUS.gif', 'https://reallifeanime.files.wordpress.com/2014/06/akari-slap.gif', 'https://cdn.weeb.sh/images/BkzyEktv-.gif'];
                 let embed = new Discord.RichEmbed()
                     .setDescription(`${user} Пизданул(а) ${user1}.`)
@@ -194,13 +200,13 @@ if (message.content.startsWith(`${prefix}kiss`)) {
         user = bot.user;
         user1 = message.author;
     }
-        message.channel.send(`Загрузка...`).then(msg => {
+        message.channel.send(`${smile}loading`).then(msg => {
         request('https://nekos.life/api/v2/img/kiss', function (error, response, body) {
            const urls = ['https://i.imgur.com/GoJvaea.gif', 'http://i.imgur.com/7mkRzr1.gif', 'https://cdn.weeb.sh/images/Byh57gqkz.gif', 'http://i.imgur.com/3wv088f.gif', 'https://cdn.weeb.sh/images/ryEvhTOwW.gif', 'https://i.imgur.com/7GhTplD.gif', 'https://i.imgur.com/B6UKulT.gif', 'https://cdn.weeb.sh/images/HJmunTOw-.gif', 'https://cdn.weeb.sh/images/SJINn6OPW.gif', 'https://i.imgur.com/MzAjNdv.gif', 'https://i.imgur.com/gWIm5bK.gif', 'https://cdn.weeb.sh/images/rkM4nTOPb.gif', 'https://cdn.weeb.sh/images/S1VEna_v-.gif', 'https://cdn.weeb.sh/images/rkv_mRKF-.gif', 'https://cdn.weeb.sh/images/BJSdQRtFZ.gif'];
                 let embed = new Discord.RichEmbed()
                     .setDescription(`${user} Поцеловал(а) ${user1}.`)
                     .setImage(urls[Math.floor(Math.random() * urls.length)])
-                    .setFooter('►Завод №98 | z!kiss @user', 'https://discordapp.com/assets/81a553e7c02c5dd144e40888c4b2faad.svg')
+                    .setFooter('►Завод №98 | z!kiss @user', 'https://cdn.discordapp.com/emojis/640790614539239435.png?v=1')
                     .setColor("#007fff")
                     .setTimestamp(); 
                     msg.edit({embed});   
@@ -215,7 +221,7 @@ if (message.content.startsWith(`${prefix}hug`)) {
         user = bot.user;
         user1 = message.author;
     }
-        message.channel.send(`Загрузка...`).then(msg => {
+        message.channel.send(`${smile}loading`).then(msg => {
         const urls = ['https://cdn.weeb.sh/images/B11CDkhqM.gif', 'https://cdn.weeb.sh/images/BJCCd_7Pb.gif', 'https://cdn.weeb.sh/images/HkRwnuyuW.gif', 'https://cdn.weeb.sh/images/SJByY_QwW.gif', 'https://cdn.weeb.sh/images/BkBs2uk_b.gif', 'https://cdn.weeb.sh/images/rkYetOXwW.gif', 'https://cdn.weeb.sh/images/Bk5haAocG.gif', 'https://cdn.weeb.sh/images/ry6o__7D-.gif', 'https://cdn.weeb.sh/images/r1bAksn0W.gif', 'https://cdn.weeb.sh/images/ryg2dd7wW.gif', 'https://cdn.weeb.sh/images/rk6PsvOUM.gif'];
                 let embed = new Discord.RichEmbed()
                     .setDescription(`${user} Обнял(а) ${user1}.`)
@@ -227,7 +233,7 @@ if (message.content.startsWith(`${prefix}hug`)) {
     });
 }
 if (message.content.startsWith(`${prefix}suicide`)) {
-        message.channel.send(`Загрузка...`).then(msg => {
+        message.channel.send(`${smile}loading`).then(msg => {
         const urls = ['https://cdn60.picsart.com/182542841000202.gif?r1024x1024', 'https://images-ext-2.discordapp.net/external/PVHDexd-zGtZwfUY_ivDzIR7bDaHDygKZ8XmR9jUOd8/https/i.imgur.com/cp9ZF1A.gif?width=360&height=203', 'https://i.pinimg.com/originals/a5/f1/96/a5f196464ed42f493b95a600099e83b9.gif', 'https://media.giphy.com/media/WsWJZcJoxmLUk/giphy.gif', 'https://media1.tenor.com/images/47892bb88afc132a3afb775988208240/tenor.gif?itemid=5505166', 'https://data.whicdn.com/images/290510883/original.gif', 'https://78.media.tumblr.com/6824d7afa9302623f7d9956ccb68778d/tumblr_mp7y69GFbW1s9t463o1_500.gif', 'https://media1.tenor.com/images/a5db1c26b710b8b834d8265bf97a6c79/tenor.gif?itemid=5091706', 'http://data.whicdn.com/images/107593752/large.gif', 'https://i.pinimg.com/originals/03/43/e6/0343e651eded6629041d165f9c0d7cf7.gif', 'https://zippy.gfycat.com/EquatorialGleefulArabianhorse.gif', 'https://i.imgur.com/ysphsEK.gif', 'https://i.imgur.com/WSioKga.gif', 'https://i.imgur.com/4Bw9XTs.gif', 'https://i.imgur.com/Q0H6LO2.gif'];
                         let user1 = message.author;
                         let embed = new Discord.RichEmbed()
@@ -247,7 +253,7 @@ if (message.content.startsWith(`${prefix}suicide`)) {
             user = bot.user;
             user1 = message.author;
         }
-            message.channel.send(`Загрузка...`).then(msg => {
+            message.channel.send(`${smile}loading`).then(msg => {
                 const urls = ['http://gifimage.net/wp-content/uploads/2017/09/anime-kill-gif.gif', 'https://cdn.discordapp.com/attachments/438289167525347328/471199251230228510/3.gif', 'https://cdn.discordapp.com/attachments/438280799448727552/471207587254108161/1.gif', 'https://cdn.weeb.sh/images/B1qosktwb.gif', 'https://cdn.weeb.sh/images/B1VnoJFDZ.gif', 'https://cdn.discordapp.com/attachments/438280799448727552/471279823537569794/2.gif', 'https://cdn.discordapp.com/attachments/438280799448727552/471280185996476426/1.gif', 'https://cdn.discordapp.com/attachments/438289167525347328/471280517560664066/3.gif', 'https://cdn.discordapp.com/attachments/438289167525347328/471280729175883796/1.gif'];
                     let embed = new Discord.RichEmbed()
                         .setDescription(`${user} Убил(а) ${user1}.`)
@@ -259,7 +265,7 @@ if (message.content.startsWith(`${prefix}suicide`)) {
             });
         }
         if (message.content.startsWith(`${prefix}sad`)) {
-                message.channel.send(`Загрузка...`).then(msg => {
+                message.channel.send(`${smile}loading`).then(msg => {
                 const urls = ['https://media2.giphy.com/media/ROF8OQvDmxytW/giphy.gif', 'https://cdn.weeb.sh/images/HyO7mIXvW.gif','https://i.pinimg.com/originals/ce/cd/c0/cecdc0584e01e1fc3cd9dd9f36adfaa9.gif', 'https://i.skyrock.net/3403/91613403/pics/3227155489_1_2_1EU0NjzW.gif', 'http://gif-finder.com/wp-content/uploads/2015/07/Anime-girl-crying.gif', 'https://i.pinimg.com/originals/19/42/07/194207dd9df329dcc66bf0bc07eefe8c.gif', 'https://i.gifer.com/HNHc.gif', 'http://mrwgifs.com/wp-content/uploads/2013/05/Dramatic-Crying-In-Anime-Gif.gif', 'https://i.imgur.com/5qw84ue.gif', 'https://data.whicdn.com/images/307228077/original.gif', 'http://gifimage.net/wp-content/uploads/2017/07/anime-cry-gif-9.gif', 'https://media1.tenor.com/images/d5668af606ca4d0332a6507418cabbce/tenor.gif?itemid=4952249', 'https://media.giphy.com/media/3fmRTfVIKMRiM/giphy.gif', 'https://media1.tenor.com/images/75edc9882e5175f86c2af777ffbb14a6/tenor.gif?itemid=5755232', 'http://gifimage.net/wp-content/uploads/2017/07/anime-cry-gif-28.gif'];
                                 let user1 = message.author;
                                 let embed = new Discord.RichEmbed()
@@ -272,7 +278,7 @@ if (message.content.startsWith(`${prefix}suicide`)) {
                         });
                     }
              if (message.content.startsWith(`${prefix}happy`)) {
-                    message.channel.send(`Загрузка...`).then(msg => {
+                    message.channel.send(`${smile}loading`).then(msg => {
                     const urls = ['https://media.giphy.com/media/3Cm8cxtSHqu6Q/giphy.gif', 'https://thumbs.gfycat.com/BrilliantScaryAmethystsunbird-max-14mb.gif','https://cdn72.picsart.com/186168594000202.gif?r1024x1024', 'https://gifimage.net/wp-content/uploads/2017/10/happy-anime-girl-gif-4.gif', 'https://i.gifer.com/FPU2.gif', 'https://data.whicdn.com/images/174338297/original.gif', 'https://data.whicdn.com/images/220182469/original.gif', 'https://media.giphy.com/media/MgJAxaf1mjn56/giphy.gif', 'https://i.kym-cdn.com/photos/images/original/001/154/308/a68.gif', 'https://media2.giphy.com/media/CNUb51EbTxuRG/giphy.gif'];
                                     let user1 = message.author;
                                     let embed = new Discord.RichEmbed()
