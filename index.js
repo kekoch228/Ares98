@@ -170,7 +170,7 @@ if (message.content.startsWith(`${prefix}ship`)) {
       }
   }
 if (message.content.startsWith(`${prefix}slap`)) {
-    if(!args[0]) return message.channel.send('z!slap @user\n\nПиздануть пользователя.');
+    if(!args[0]) return message.channel.send('```z!slap @user\n\nПиздануть пользователя.```');
     let user = message.author;
     let user1 = message.mentions.users.first();
     if (!user1 || user1.id === user.id) {
@@ -189,7 +189,7 @@ if (message.content.startsWith(`${prefix}slap`)) {
         });
 }
 if (message.content.startsWith(`${prefix}kiss`)) {
-    if(!args[0]) return message.channel.send('z!kiss @user\n\n Поцеловать пользователя.');
+    if(!args[0]) return message.channel.send('```z!kiss @user\n\n Поцеловать пользователя.```');
     let user = message.author;
     let user1 = message.mentions.users.first();
     if (!user1 || user1.id === user.id) {
@@ -208,7 +208,7 @@ if (message.content.startsWith(`${prefix}kiss`)) {
         });
 }
 if (message.content.startsWith(`${prefix}hug`)) {
-    if(!args[0]) return message.channel.send('z!hug @user\n\nОбнять пользователя.');
+    if(!args[0]) return message.channel.send('```z!hug @user\n\nОбнять пользователя.```');
     let user = message.author;
     let user1 = message.mentions.users.first();
     if (!user1 || user1.id === user.id) {
@@ -240,7 +240,7 @@ if (message.content.startsWith(`${prefix}suicide`)) {
                 });
             }
     if (message.content.startsWith(`${prefix}kill`)) {
-        if(!args[0]) return message.channel.send('z!kill @user\n\nУбить пользователя.');
+        if(!args[0]) return message.channel.send('```z!kill @user\n\nУбить пользователя.```');
         let user = message.author;
         let user1 = message.mentions.users.first();
         if (!user1 || user1.id === user.id) {
