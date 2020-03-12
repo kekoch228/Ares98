@@ -4,7 +4,11 @@ const forEachTimeout = require('foreach-timeout');
 const bot = new Discord.Client();
 const colors = ["FF0D00","FF2800","FF3D00","FF4F00","FF5F00","FF6C00","FF7800","FF8300","FF8C00","FF9500","FF9E00","FFA500","FFAD00","FFB400","FFBB00","FFC200","FFC900","FFCF00","FFD600","FFDD00","FFE400","FFEB00","FFF200","FFFA00","F7FE00","E5FB00","D5F800","C6F500","B7F200","A8F000","98ED00","87EA00","74E600","5DE100","41DB00","1DD300","00C618","00BB3F","00B358","00AC6B","00A67C","009E8E","028E9B","06799F","0969A2","0C5DA5","0E51A7","1047A9","133CAC","1531AE","1924B1","1F1AB2","2A17B1","3415B0","3C13AF","4512AE","4E10AE","560EAD","600CAC","6A0AAB","7608AA","8506A9","9702A7","AD009F","BC008D","C7007D","D0006E","D8005F","DF004F","E7003E","EF002A","F80012"];
 const stop = []
-const prefix = "z!";
+const prefix = "z!"
+const emoji = {
+    hey: '687700281600901266',
+    loading:'687702955519901729'
+};
 
 
 async function color () {
@@ -45,7 +49,7 @@ if(command === "smile" && ['248521740945195008'].includes(message.author.id)){
    let member = message.mentions.members.first();
    if(!member) member = message.member;
 
-   let replies = [`${member} не хей(натурал) `, `${member} на 1% хей 🌈`, `${member} на 2% хей 🌈`, `${member} на 3% хей 🌈`, `${member} на 4% хей 🌈`, `${member} на 5% хей 🌈`, `${member} на 10% хей 🌈`, `${member} на 15% хей 🌈`,  `${member} на 20% хей 🌈`, `${member} на 25% хей 🌈`, `${member} на 30% хей 🌈`, `${member} на 35% хей 🌈`, `${member} на 40% хей 🌈`, `${member} на 45% хей 🌈`, `${member} на 50% хей 🌈`, `${member} на 55% хей 🌈`, `${member} на 60% хей 🌈`, `${member} на 65% хей 🌈`, `${member} на 70% хей 🌈`, `${member} на 75% хей 🌈`, `${member} на 80% хей 🌈`, `${member} на 85% хей 🌈`, `${member} на 90% хей 🌈`, `${member} на 95% хей 🌈`, `${member} на 100% хей 🌈`, `${member} на 1488% хей 🌈`];
+   let replies = [`${member} не хей(натурал) `, `${member} на 1% хей ${emoji.hey}`.]
    let result = Math.floor((Math.random() * replies.length));
    let question = args.join(" "); 
 
