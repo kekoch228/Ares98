@@ -332,14 +332,13 @@ if (message.content.startsWith(`${prefix}help`)){
     }
 //-----------------------------------------------------
 if (message.content.startsWith(`${prefix}ping`)){
-exports.run = async (client, message, args, level) => {
-  const msg = await message.channel.send("Ping?");
+  const msg = await message.channel.send("Ping?")
   msg.edit(`Pong! Задержка - \`${msg.createdTimestamp - message.createdTimestamp}ms\`. API задержка - \`${Math.round(client.ping)}ms\``);
 }
 
 
 if (message.content.startsWith(`${prefix}penis`)){
-exports.run = async (client, message, args, level) => {
+
   let user = message.mentions.users.first();
   
   if(!user) user = message.author;
