@@ -332,8 +332,7 @@ if (message.content.startsWith(`${prefix}help`)){
     }
 //-----------------------------------------------------
 if (message.content.startsWith(`${prefix}ping`)){
-  const msg = await message.channel.send("Ping?")
-  msg.edit(`Pong! Задержка - \`${msg.createdTimestamp - message.createdTimestamp}ms\`. API задержка - \`${Math.round(client.ping)}ms\``);
+  message.channel.send(`Pong! Задержка - \`${msg.createdTimestamp - message.createdTimestamp}ms\`. API задержка - \`${Math.round(client.ping)}ms\``);
 }
 
 
