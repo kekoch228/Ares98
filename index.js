@@ -331,10 +331,6 @@ if (message.content.startsWith(`${prefix}help`)){
     return message.channel.send(helpEmbed)
     }
 //-----------------------------------------------------
-if (message.content.startsWith(`${prefix}ping`)){
-  message.channel.send(`Pong! Задержка - \`${msg.createdTimestamp - message.createdTimestamp}ms\`. API задержка - \`${Math.round(client.ping)}ms\``);
-}
-
 
 if (message.content.startsWith(`${prefix}penis`)){
 
