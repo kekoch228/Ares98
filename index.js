@@ -40,7 +40,7 @@ if(command === "say" && ['296688864091701248', '248521740945195008', '4682149910
 if(command === "smile" && ['248521740945195008'].includes(message.author.id)){
     message.channel.send(bot.emojis.find("name", args[0]).id)
     }
- if (message.content.startsWith(`${prefix}gay`,`${prefix}hey`)){
+ if (message.content.startsWith(`${prefix}gay`)){
    message.delete();
    
    let member = message.mentions.members.first();
@@ -177,16 +177,16 @@ if (message.content.startsWith(`${prefix}help`)){
     .setColor('RANDOM')
     .addField("Спиздить аву:", "`z!avatar <Пользователь>`")
     .addField("Эмоции:", "`z!kiss <Пользователь>;`\n`z!slap <Пользователь>;`\n`z!hug <Пользователь>;`\n`z!kill <Пользователь>;`\n`z!suicide;`\n`z!cry;`\n`z!happy.`")
-    .addField("Тест на хея:", "`z!gay/z!hey <Пользователь>`")
+    .addField("Тест на хея:", "`z!gay <Пользователь>`")
     .addField("Измеритель-Совместимости:", "`z!ship <Пользователь>`")
-    .addField("Измерить пенис:", "`z!penis/z!hui <Пользователь>`")
+    .addField("Измерить пенис:", "`z!penis <Пользователь>`")
    .setFooter('►Завод №98 | z!help', 'https://cdn.discordapp.com/emojis/640790508452446219.png?v=1')
    .setTimestamp(); 
     return message.channel.send(helpEmbed)
     }
 //-----------------------------------------------------
 
-if (message.content.startsWith(`${prefix}penis`,`${prefix}hui`)){
+if (message.content.startsWith(`${prefix}penis`)){
 
   let user = message.mentions.users.first();
   
