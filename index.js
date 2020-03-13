@@ -215,8 +215,6 @@ if (message.content.startsWith(`${prefix}penis`)){
 
 if (message.content.startsWith(`${prefix}wt`)){
         let city = args.join(" ")
-        if(!args) city = userData.get(message.author.id);
-        if(!city) return message.error('Не указан город', 5, false);
 
         try { weather.find({search: city, degreeType: 'C'}, function(err, result) {
             if (err) message.channel.send(err);
