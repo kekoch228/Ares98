@@ -246,7 +246,6 @@ if (message.content.startsWith(`${prefix}wt`,`${prefix}weather`)){
             } catch (err) { message.channel.send(err)}
            
     }
-}
 
 if (message.content.startsWith(`${prefix}slap`)) {
     if(!args[0]) return message.channel.send('```z!slap @user\n\nПиздануть пользователя.```');
