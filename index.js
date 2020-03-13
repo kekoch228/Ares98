@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
+const weather = require('weather-js');
 const forEachTimeout = require('foreach-timeout');
 const bot = new Discord.Client();
 const colors = ["FF0D00","FF2800","FF3D00","FF4F00","FF5F00","FF6C00","FF7800","FF8300","FF8C00","FF9500","FF9E00","FFA500","FFAD00","FFB400","FFBB00","FFC200","FFC900","FFCF00","FFD600","FFDD00","FFE400","FFEB00","FFF200","FFFA00","F7FE00","E5FB00","D5F800","C6F500","B7F200","A8F000","98ED00","87EA00","74E600","5DE100","41DB00","1DD300","00C618","00BB3F","00B358","00AC6B","00A67C","009E8E","028E9B","06799F","0969A2","0C5DA5","0E51A7","1047A9","133CAC","1531AE","1924B1","1F1AB2","2A17B1","3415B0","3C13AF","4512AE","4E10AE","560EAD","600CAC","6A0AAB","7608AA","8506A9","9702A7","AD009F","BC008D","C7007D","D0006E","D8005F","DF004F","E7003E","EF002A","F80012"];
@@ -211,6 +212,41 @@ if (message.content.startsWith(`${prefix}penis`)){
   message.channel.send('8'+'='.repeat(x)+'D');
 }
 
+
+if (message.content.startsWith(`${prefix}wt`,`${prefix}weather`)){
+        let city = args.join(" ")
+        if(!args[0]) city = userData.get(message.author.id);
+        if(!city) return message.error('Не указан город', 5, false);
+
+        try { weather.find({search: city, degreeType: 'C'}, function(err, result) {
+            if (err) message.channel.send(err);
+            if (result.length === 0) {
+            message.error("Город не найден", 0, false)
+            return;
+            }
+            var current = result[0].current;
+            var location = result[0].location;
+            const embed = new Discord.RichEmbed()
+            .setDescription(`**${current.skytext}**`)
+            .setAuthor(`Погода для ${current.observationpoint}`)
+            .setThumbnail(current.imageUrl)
+            .setColor('RANDOM')
+            .addField('Временая зона',`UTC${location.timezone}`, true)
+            .addField('Тип',`°${location.degreetype}`, true) //°Celsius
+            .addField('Температура',`${current.temperature} °C`, true)
+            .addField('Ощущается как', `${current.feelslike} °C`, true)
+            .addField('Ветер',current.winddisplay, true)
+            .addField('Влажность', `${current.humidity}%`, true)
+            message.channel.send({embed: embed});
+            if(!userData.get(message.author.id)) {
+                userData.set(message.author.id, city);
+                message.channel.send(`Ваш город установлен как **${city}**, теперь если вы не написали город для поиска, я покажу ваш.`)
+            }
+            }).catch(err => message.channel.send(err))
+            } catch (err) { message.channel.send(err)}
+           
+    }
+}
 
 if (message.content.startsWith(`${prefix}slap`)) {
     if(!args[0]) return message.channel.send('```z!slap @user\n\nПиздануть пользователя.```');
