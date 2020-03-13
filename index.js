@@ -356,7 +356,7 @@ if (message.content.startsWith(`${prefix}penis`)){
 }
 
 
-     }
+     
 });
 
 bot.login(process.env.BOT_TOKEN);
