@@ -6,6 +6,7 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "foreach-timeout": "^2.0.2"
+    "weather-js": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {
