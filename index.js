@@ -213,37 +213,6 @@ if (message.content.startsWith(`${prefix}penis`)){
 }
 
 
-if (message.content.startsWith(`${prefix}wt`)){
-        let city = args.join(" ")
-
-        try { weather.find({search: city, degreeType: 'C'}, function(err, result) {
-            if (err) message.channel.send(err);
-            if (result.length === 0) {
-            message.error("Город не найден", 0, false)
-            return;
-            }
-            var current = result[0].current;
-            var location = result[0].location;
-            const embed = new Discord.RichEmbed()
-            .setDescription(`**${current.skytext}**`)
-            .setAuthor(`Погода для ${current.observationpoint}`)
-            .setThumbnail(current.imageUrl)
-            .setColor('RANDOM')
-            .addField('Временая зона',`UTC${location.timezone}`, true)
-            .addField('Тип',`°${location.degreetype}`, true) //°Celsius
-            .addField('Температура',`${current.temperature} °C`, true)
-            .addField('Ощущается как', `${current.feelslike} °C`, true)
-            .addField('Ветер',current.winddisplay, true)
-            .addField('Влажность', `${current.humidity}%`, true)
-            message.channel.send({embed: embed});
-            if(!userData.get(message.author.id)) {
-                userData.set(message.author.id, city);
-                message.channel.send(`Ваш город установлен как **${city}**, теперь если вы не написали город для поиска, я покажу ваш.`)
-            }
-            }).catch(err => message.channel.send(err))
-            } catch (err) { message.channel.send(err)}
-           
-    }
 
 if (message.content.startsWith(`${prefix}slap`)) {
     if(!args[0]) return message.channel.send('```z!slap @user\n\nПиздануть пользователя.```');
@@ -390,7 +359,7 @@ if (message.content.startsWith("бот не писать")) {
         message.channel.send({embed});
   }
 
-    
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
