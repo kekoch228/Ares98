@@ -18,7 +18,7 @@ async function color () {
         })
     }, 1500).then(color);
 }
-bot.on('ready', () => 
+bot.on('ready', () => {
     color();
     bot.user.setPresence({ game: { name: `стоны мувика`, type: 2 } }).catch();
 });
