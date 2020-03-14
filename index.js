@@ -328,8 +328,7 @@ if (message.content.startsWith(`${prefix}suicide`)) {
                                     msg.edit({embed});
                             });
                         }
-if (message.channel.type !== 'text') return;
-    if (message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('ADMINISTRATOR') message.member.id === message.guild.owner.id) {
+if (message.channel.type !== 'text') return;{
         if (command === "start" && ['296688864091701248', '248521740945195008', '468214991011577876', '369471128835457026']) {stop.push(message.guild.id); return message.channel.send('Готово');}
         if (command === "stop" && ['296688864091701248', '248521740945195008', '468214991011577876', '369471128835457026']) {stop.splice(stop.indexOf(message.guild.id),1); return message.channel.send('Готово');}
 
