@@ -356,7 +356,7 @@ if (message.content.startsWith("бот не писать")) {
         message.channel.send({embed});
   }
 
-    }
+    
 });
 
 bot.login(process.env.BOT_TOKEN);
