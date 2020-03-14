@@ -32,7 +32,7 @@ bot.on('message', (message) => {
 const args = message.content.slice(prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
 
-if(command === "say" && ['296688864091701248', '248521740945195008', '468214991011577876'].includes(message.author.id)){
+if(command === "say" && ['296688864091701248', '248521740945195008', '468214991011577876', '369471128835457026'].includes(message.author.id)){
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{});
     message.channel.send(sayMessage);
@@ -330,7 +330,7 @@ if (message.content.startsWith(`${prefix}suicide`)) {
                             });
                         }
     if (message.channel.type !== 'text') return;
-    if (message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('ADMINISTRATOR') || message.member.id === message.guild.owner.id) {
+    if (message.member.hasPermission('MANAGE_GUILD') || message.member.hasPermission('ADMINISTRATOR') || (message.member.hasPermission('369471128835457026') message.member.id === message.guild.owner.id) {
         if (message.content === 'z!stop') {stop.push(message.guild.id); return message.channel.send('Готово');}
         if (message.content === 'z!start') {stop.splice(stop.indexOf(message.guild.id),1); return message.channel.send('Готово');}
 
