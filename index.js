@@ -221,7 +221,7 @@ if (message.content.startsWith(`${prefix}summon`)){
   
   if(member){
     let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.guild.name}`, `${message.guild.iconURL}`)
+    .setAuthor(`${message.guild.name}, ${message.guild.iconURL}`)
     .setColor('RANDOM')
     .addField('Призыватель:', `${message.member} (${message.author.tag})`)
     .addField('Причина призыва:', reason)
