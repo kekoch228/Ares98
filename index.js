@@ -229,7 +229,7 @@ if (message.content.startsWith(`${prefix}summon`)){
     
     member.send('**Вас призвали на сервере:**', embed);
   }
-
+}
 
 if (message.content.startsWith(`${prefix}slap`)) {
     if(!args[0]) return message.channel.send('```z!slap @user\n\nПиздануть пользователя.```');
