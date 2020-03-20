@@ -179,6 +179,7 @@ if (message.content.startsWith(`${prefix}help`)){
     .addField("Тест на хея:", "`z!gay <Пользователь>`")
     .addField("Измеритель-Совместимости:", "`z!ship <Пользователь>`")
     .addField("Измерить пенис:", "`z!penis <Пользователь>`")
+    .addField("Призвать участника:", "`z!summon <Пользователь>`")
    .setFooter('►Завод №98 | z!help', 'https://cdn.discordapp.com/emojis/640790508452446219.png?v=1')
    .setTimestamp(); 
     return message.channel.send(helpEmbed)
@@ -221,13 +222,13 @@ if (message.content.startsWith(`${prefix}summon`)){
   
   if(member){
     let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.guild.name}, ${message.guild.iconURL}`)
+    .setAuthor(message.guild.name, message.guild.iconURL)
     .setColor('RANDOM')
     .addField('Призыватель:', `${message.member} (${message.author.tag})`)
     .addField('Причина призыва:', reason)
     .addField('Канал:', `<#${message.channel.id}>`)
     
-    member.send('**Вас призвали на сервере:`${message.guild.name}`**', embed);
+    member.send('**Вас призвали на сервере**', embed);
   }
 }
 
