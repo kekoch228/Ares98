@@ -211,6 +211,24 @@ if (message.content.startsWith(`${prefix}penis`)){
   message.channel.send('8'+'='.repeat(x)+'D');
 }
 
+if (message.content.startsWith(`${prefix}summon`)){
+  message.delete().catch(O_o => {});
+    
+  let member = message.mentions.members.first(),
+  reason = args.slice(1).join(' ');
+  
+  if(!reason) reason = 'Причина не указана 🤔';
+  
+  if(member){
+    let embed = new Discord.RichEmbed()
+    .setAuthor(message.guild.name, message.guild.iconURL)
+    .setColor('RANDOM')
+    .addField('Призыватель:', `${message.member} (${message.author.tag})`)
+    .addField('Причина призыва:', reason)
+    .addField('Канал:', `<#${message.channel.id}>`)
+    
+    member.send('**Вас призвали на сервере:**', embed);
+  }
 
 
 if (message.content.startsWith(`${prefix}slap`)) {
